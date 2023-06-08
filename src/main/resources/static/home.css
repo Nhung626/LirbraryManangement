@@ -1,0 +1,252 @@
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+    background-color: #3A5A81;
+    /*background: url("header.jpg") no-repeat center/cover;*/
+}
+
+.dau{
+    display:flex;
+    align-items: center;
+}
+
+.dau ion-icon{
+    color:#fff;
+    margin-top: -10px;
+    margin-right: 5px;
+    margin-left: 200px;
+    font-size: 30px;
+}
+
+.title {
+    font-size:20px;
+
+    margin-right: 10px;
+    padding-top: 15px;
+    position: relative;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: grey;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.search-bar {
+    width: 40%;
+    float: right;
+    margin-right: 30px;
+    position: relative;
+    margin-top: center;
+}
+
+.search-bar input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid grey;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-bar ion-icon {
+    position: absolute;
+    right: 190px;
+    top: 45%;
+    transform: translateY(-50%);
+    color: black;
+    margin-left: 30px;
+}
+
+
+.search-bar .mess ion-icon {
+    float: right;
+    right:100px;
+    color:aliceblue;
+    font-size: 30px;
+}
+
+.thongtin {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 300px;
+}
+
+.thongtin ion-icon {
+    color: white;
+    right:10px;
+}
+
+.thongtin-menu {
+    position: absolute;
+    top: 60px;
+    right: 110;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.thongtin-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.thongtin-menu li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.thongtin-menu ion-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color:rgb(51, 51, 51)
+}
+
+.thongtin:hover .thongtin-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* CSS cho header2 */
+.header2 {
+    display: flex;
+    justify-content: center;
+    background-color: #ebebeb;
+    height:50px;
+}
+
+.task-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif, Helvetica, Arial;
+    font-size: 14px;
+    padding: 15px;
+    width: 800px;
+
+}
+
+.task-bar .bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.task-bar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border:none;
+    background-color: transparent;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu nền */
+    height: 50px;
+}
+
+.task-bar button:hover {
+    background-color: #ffffff8e; /* Màu nền khi đưa chuột vào */
+}
+
+.task-bar ion-icon{
+    margin-right: 5px;
+    font-size: 20px;
+    color:#b213c0;
+}
+.task-bar label {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.task-bar .theloai-menu{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    top:115px;
+    left:47%;
+    border: 1px solid rgb(255, 254, 254);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(77, 75, 75, 0.363);
+}
+
+.task-bar .tacgia-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    top:115px;
+    left:52%;
+    border: 1px solid rgb(255, 254, 254);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(77, 75, 75, 0.363);
+
+}
+
+.task-bar button:nth-child(2):hover + .theloai-menu,
+.task-bar button:nth-child(4):hover + .tacgia-menu {
+    display: block;
+}
+
+.task-bar .theloai-menu ul,
+.task-bar .tacgia-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-bar .theloai-menu li,
+.task-bar .tacgia-menu li {
+    padding: 5px;
+}
+
+.task-bar .theloai-menu li:hover,
+.task-bar .tacgia-menu li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.body-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 100vh; /* Sử dụng chiều cao của viewport */
+}
+
+.layout {
+    width: 55%;
+    height: auto; /* Thay đổi chiều cao cho phù hợp */
+    background-color: rgba(247, 244, 244, 0.281);
+    border: 1px solid rgb(255, 254, 254);
+    border-radius: 0; /* Thay đổi độ cong cho phù hợp */
+    box-shadow: 0 2px 4px rgba(77, 75, 75, 0.363);
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi hết khung */
+    justify-content: center; /* Căn giữa các phần tử theo chiều ngang */
+}
+
+.item {
+    width: 200px; /* Định kích thước của mỗi item */
+    padding: 10px; /* Thêm khoảng cách giữa các item */
+}
+
+.image img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ không gian */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh đúng */
+}

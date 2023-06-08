@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{login1.css}">
+    <title>Library-Login</title>
+</head>
+<body>
+<section>
+
+    <div class="form-book">
+        <div class="form-value">
+            <form th:action="@{/login}" method="POST">
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="inputbox">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="forget">
+                    <label>
+                        <input type="checkbox">Remember me<a href="#"> Forget Password</a>
+                    </label>
+                </div>
+
+                <button>Login</button>
+                <div class="register">
+                    <p>Bạn không có tài khoản?<a th:href="@{/sign-in}"> Register</a></p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</section>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--<script src="/static/login.js"></script>-->
+</body>
+</html>

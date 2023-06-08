@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Sach</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container" >
+    <br><h1>Add Book</h1> <br>
+    <form th:action="@{/thuthu/add-book}" method="POST" th:object="${thuThu}">
+        <input type="hidden" name="name" th:field="*{hoTenTT}">
+        <div class="mb-3" >
+            <label for="tensach" class="form-label">Tên Sách*</label>
+            <input type="text" id="tensach" name="tensach" class="form-control"  required>
+        </div>
+        <div class="mb-3" >
+            <label for="tacgia" class="form-label">Tên Tác Giả*</label>
+            <input type="text" id="tacgia" name="tacgia" class="form-control"  required>
+        </div>
+        <div class="mb-3">
+            <label for="theloai" class="form-label">Thể loại*</label>
+            <select id="theloai" name="theloai" class="form-select" required>
+                <option value="Văn học">Văn Học</option>
+                <option value="Văn học nước ngoài">Văn Học Nước Ngoài</option>
+                <option value="Khoa học kĩ thuật">Khoa học kĩ thuật</option>
+                <option value="Tiểu Thuyết">Tiểu Thuyết</option>
+                <option value="Thiếu Nhi">Thiếu Nhi</option>
+            </select>
+        </div>
+        <div class="mb-3" >
+            <label for="soluong" class="form-label">Số Lượng*</label>
+            <input type="text" id="soluong" name="soluong" class="form-control"  required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

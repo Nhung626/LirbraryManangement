@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lịch Sử</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <style>
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="docgia/header::header(name=${name})"></div>
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="container my-5">
+                <div class="col-md-12">
+                    <h2>Phiếu mượn</h2>
+                    <div>
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                            <tr>
+                                <th>Mã PM</th>
+                                <th>Sách mượn</th>
+                                <th>Ngày mượn</th>
+                                <th>Trạng thái</th>
+                                <th>Hủy</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="pm : ${phieumuon}">
+                                <td th:text="${pm.maPM}"></td>
+                                <td>
+                                    <ul>
+                                        <li th:each="sach : ${pm.books}" th:text="${sach.tensach}"></li>
+                                    </ul>
+                                </td>
+                                <td th:text="${#temporals.format(pm.ngayMuon, 'dd-MM-yyyy HH:mm')}"></td>
+                                <td th:text="${pm.trangThai}"></td>
+                                <td><a th:if="${pm.trangThai=='Đợi duyệt'}"
+                                       onclick="confirmDelete(event)" th:href="@{/docgia/delPM(name=${pm.docGia.hoTenDG},maPM=${pm.maPM})}"
+                                       class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="/docgia/header::pop-up"></div>
+<div th:insert="footer::footer"></div>
+</body>
+<script>
+    function confirmDelete(maPM) {
+        if (confirm("Bạn có chắc chắn muốn hủy đăng ký mượn không?")) {
+            window.location.href = event.target.getAttribute('href');
+        }
+        else {
+            event.preventDefault();
+        }
+    }
+
+</script>
+</html>

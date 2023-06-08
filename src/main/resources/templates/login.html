@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/login.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <title>Library-Login</title>
+</head>
+<body>
+
+<section>
+    <div class="from-box">
+        <div class="from-value">
+            <h2>Login</h2>
+            <form th:action="@{/login}" method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" id="email" name="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control">
+                </div><br>
+
+                <div class="forget">
+                    <label for="forget">
+                        <input type="checkbox" name="forget" id="forget">Remember me<a href="#"> Forget Password</a>
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" type="submit" name="submit" value="Đăng nhập">Login</button>
+            </form>
+            <div class="register">
+                <p>Bạn không có tài khoản?<a th:href="@{/sign-in}"> Register</a></p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
